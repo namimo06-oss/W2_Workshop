@@ -1,2 +1,14 @@
  # Requirements and Conceptual Model.
 Dahlia Sanchez, Destiney Lomeli, Natalia Miranda
+1b. End user: Lana (the dog-walking business owner)
+What the end user needs to do:Keep track of customers and their dogs, Schedule dog walks, Record completed walks, Track payments and View history of services
+Categories of data to track: Customers, Dogs, Walks/Appointments and Payments
+1c) Details for Each Category
+Customers: Customer ID, Name, Phone number, Email and Address
+Dogs: Dog ID, Name, Breed, Age, Special notes (behavior, medical info) and Owner (Customer ID)
+Walks / Appointments: Walk ID, Dog ID, Date, Time, Duration and Status (scheduled, completed, canceled)
+Payments: Payment ID, Customer ID, Amount, Date and Payment method (cash, card, etc.)
+
+
+
+
