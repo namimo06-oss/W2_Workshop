@@ -16,4 +16,7 @@ Customers: customer_id(PK), Name, Phone, Email and Address
 Dogs: dog_id(PK), Name, Breed, Age, Notes, customer_id(FK)
 Walks: walk_id(PK), dog_id (FK), date, time, duration and status
 Payments: payment_id (PK), customer_id (FK), amount, date and method
+2c. Relationships: One customer--many dogs, one dog--many walks, one customer--many payments
+2d. Many to many: We could have one if one walks includes multiple dogs AND a dog can be in multiple walks.
+Then we'll add a junction table, like; Walk_Dogs: walk_id and dog_id
 
