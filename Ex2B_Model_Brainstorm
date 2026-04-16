@@ -9,6 +9,12 @@ Dogs: Dog ID, Name, Breed, Age, Special notes (behavior, medical info) and Owner
 Walks / Appointments: Walk ID, Dog ID, Date, Time, Duration and Status (scheduled, completed, canceled)
 Payments: Payment ID, Customer ID, Amount, Date and Payment method (cash, card, etc.)
 
-
+#LogicalModel
+2a. 4 tables. Customers, Dogs, Walks and Payments.
+2b. 
+Customers: customer_id(PK), Name, Phone, Email and Address
+Dogs: dog_id(PK), Name, Breed, Age, Notes, customer_id(FK)
+Walks: walk_id(PK), dog_id (FK), date, time, duration and status
+Payments: payment_id (PK), customer_id (FK), amount, date and method
 
 
