@@ -17,4 +17,3 @@ Dogs: dog_id(PK), Name, Breed, Age, Notes, customer_id(FK)
 Walks: walk_id(PK), dog_id (FK), date, time, duration and status
 Payments: payment_id (PK), customer_id (FK), amount, date and method
 
-
