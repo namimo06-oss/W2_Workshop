@@ -41,3 +41,8 @@ driven by choices between simplicity, flexibility, and data integrity.
 8b) After running each other’s scripts from the shared repository, we observed that executing a different script replaces the existing schema because of the DROP SCHEMA and CREATE SCHEMA commands. This allowed 
 us to test and better understand how each database design works in practice. However, it also meant that our own schema was overwritten when running someone else’s script. To restore our original version, we
 had to rerun our own script. This process helped us understand how schema management works and highlighted the importance of being careful when working with shared database scripts.
+
+#Module 4 - Group disscussion
+6a. Making a good prompt was something that was a struggle. It was nice having it to make sample data.
+6b. Our data that AI created made it look like our bussinesses were doing well.
+6c. With the data that AI gave us, our bussinesses were making different amount of money and the walks were different lenghts.
