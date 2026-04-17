@@ -3,7 +3,7 @@ CREATE SCHEMA lana_dog_walking;
 USE lana_dog_walking;
 
 CREATE TABLE Customers (
-    customer_id INT PRIMARY KEY,
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     phone VARCHAR(20),
     email VARCHAR(100),
@@ -11,7 +11,7 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Dogs (
-    dog_id INT PRIMARY KEY,
+    dog_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     breed VARCHAR(100),
     age INT,
@@ -21,7 +21,7 @@ CREATE TABLE Dogs (
 );
 
 CREATE TABLE Walks (
-    walk_id INT PRIMARY KEY,
+    walk_id INT AUTO_INCREMENT PRIMARY KEY,
     dog_id INT,
     date DATE,
     time TIME,
@@ -31,7 +31,7 @@ CREATE TABLE Walks (
 );
 
 CREATE TABLE Payments (
-    payment_id INT PRIMARY KEY,
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     amount DECIMAL(10,2),
     date DATE,
