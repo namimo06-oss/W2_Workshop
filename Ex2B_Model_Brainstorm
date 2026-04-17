@@ -1,6 +1,6 @@
  # Requirements and Conceptual Model.
 Dahlia Sanchez, Destiney Lomeli, Natalia Miranda
-1b. End user: Lana (the dog-walking business owner)
+1b) End user: Lana (the dog-walking business owner)
 What the end user needs to do:Keep track of customers and their dogs, Schedule dog walks, Record completed walks, Track payments and View history of services
 Categories of data to track: Customers, Dogs, Walks/Appointments and Payments
 1c) Details for Each Category
@@ -10,17 +10,34 @@ Walks / Appointments: Walk ID, Dog ID, Date, Time, Duration and Status (schedule
 Payments: Payment ID, Customer ID, Amount, Date and Payment method (cash, card, etc.)
 
 #LogicalModel
-2a. 4 tables. Customers, Dogs, Walks and Payments.
-2b. 
+2a) 4 tables. Customers, Dogs, Walks and Payments.
+2b) 
 Customers: customer_id(PK), Name, Phone, Email and Address
 Dogs: dog_id(PK), Name, Breed, Age, Notes, customer_id(FK)
 Walks: walk_id(PK), dog_id (FK), date, time, duration and status
 Payments: payment_id (PK), customer_id (FK), amount, date and method
-2c. Relationships: One customer--many dogs, one dog--many walks, one customer--many payments
-2d. Many to many: We could have one if one walks includes multiple dogs AND a dog can be in multiple walks.
+2c) Relationships: One customer--many dogs, one dog--many walks, one customer--many payments
+2d) Many to many: We could have one if one walks includes multiple dogs AND a dog can be in multiple walks.
 Then we'll add a junction table, like; Walk_Dogs: walk_id and dog_id
 
+#Module2- Group discussion
+
+4a) All of our diagrams have the same main tables which are Customers, Dogs, Walks, and Payments. Along with showing similar relationships, like one customer can have multiple dogs,
+each dog can have multiple walks, and customers can make multiple payments. We used primary keys to connect everything, and include similar details like names, dates, and amounts.
+
+4b) One big difference was how we handled the relationship between dogs and walks. Some diagrams used a seperate Walk_Dogs table, while others just connected walks directly to dogs using a dog_id. 
+The Walk_Dogs table allows multiple dogs to be in one walk, while the simpler version only allows one dog per walk. Some diagrams also had more details like specific data types or extra fields like
+notes and status, while others kept it more simple. 
+
 #Module3- Group discussion 
-8a.  When reviewing our table creation scripts, we noticed several differences in how each of us implemented the database design. All three scripts included the same core tables (Customers, Dogs, Walks, and Payments), but the structure and level of detail varied.
-My script and Dahlia’s script followed a similar approach, where each walk is associated with a single dog through a foreign key. However, Destiney’s script introduced a junction table (Walk_Dogs), allowing a many-to-many relationship between walks and dogs. This makes her design more flexible, as multiple dogs can be assigned to a single walk. We also differed in how we handled constraints. Dahlia included features like AUTO_INCREMENT, CHECK constraints, UNIQUE, and ON DELETE CASCADE to improve data integrity. My script used AUTO_INCREMENT and foreign keys but fewer constraints, making it simpler. Destiney’s script was the most minimal, without AUTO_INCREMENT or validation constraints. These differences were driven by choices between simplicity, flexibility, and data integrity.
-8b. After running each other’s scripts from the shared repository, we observed that executing a different script replaces the existing schema because of the DROP SCHEMA and CREATE SCHEMA commands. This allowed us to test and better understand how each database design works in practice. However, it also meant that our own schema was overwritten when running someone else’s script. To restore our original version, we had to rerun our own script. This process helped us understand how schema management works and highlighted the importance of being careful when working with shared database scripts.
+
+8a)  When reviewing our table creation scripts, we noticed several differences in how each of us implemented the database design. All three scripts included the same core tables (Customers, 
+Dogs, Walks, and Payments), but the structure and level of detail varied. My script and Dahlia’s script followed a similar approach, where each walk is associated with a single dog through a 
+foreign key. However, Destiney’s script introduced a junction table (Walk_Dogs), allowing a many-to-many relationship between walks and dogs. This makes her design more flexible, as multiple dogs 
+can be assigned to a single walk. We also differed in how we handled constraints. Dahlia included features like AUTO_INCREMENT, CHECK constraints, UNIQUE, and ON DELETE CASCADE to improve data integrity.
+My script used AUTO_INCREMENT and foreign keys but fewer constraints, making it simpler. Destiney’s script was the most minimal, without AUTO_INCREMENT or validation constraints. These differences were
+driven by choices between simplicity, flexibility, and data integrity.
+
+8b) After running each other’s scripts from the shared repository, we observed that executing a different script replaces the existing schema because of the DROP SCHEMA and CREATE SCHEMA commands. This allowed 
+us to test and better understand how each database design works in practice. However, it also meant that our own schema was overwritten when running someone else’s script. To restore our original version, we
+had to rerun our own script. This process helped us understand how schema management works and highlighted the importance of being careful when working with shared database scripts.
